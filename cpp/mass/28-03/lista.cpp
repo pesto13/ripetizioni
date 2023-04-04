@@ -48,6 +48,7 @@ class Lista{
         Node<T>* nuovoNodo = new Node<T>(valore);
 
         if(testa == NULL){
+            
             testa = nuovoNodo;
         }else{
             nuovoNodo->setProssimo(testa);
@@ -58,7 +59,7 @@ class Lista{
 
 
     void stampa(){
-        Node<T>* temp;
+        Node<T>* temp = testa;
 
         while(temp != NULL){
             cout<<temp->getValore()<<" ";
@@ -78,6 +79,8 @@ int main(){
     l.inserisci(6);
 
     l.stampa();
+
+    
 
     return 0;
 }

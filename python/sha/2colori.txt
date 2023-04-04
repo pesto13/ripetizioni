@@ -1,0 +1,81 @@
+import turtle
+import random
+uga = turtle.Turtle()
+ninja = turtle.Turtle()
+
+uga.penup()
+ninja.penup()
+uga.goto(-200, 100)
+ninja.goto(-200, -100)
+
+uga.fillcolor("purple")
+
+ninja.fillcolor("orange")
+
+uga.speed(5)
+ninja.speed(5)
+
+lun = random.randint(20, 80)
+
+
+# uga triangolo
+uga.begin_fill()
+uga.pendown()
+uga.forward(lun)
+uga.left(120)
+uga.forward(lun)
+uga.left(120)
+uga.forward(lun)
+uga.end_fill()
+uga.left(120)
+uga.forward(lun)
+
+# ninja triangolo
+ninja.begin_fill()
+ninja.pendown()
+ninja.forward(lun)
+ninja.left(120)
+ninja.forward(lun)
+ninja.left(120)
+ninja.forward(lun)
+ninja.end_fill()
+ninja.left(120)
+ninja.forward(lun)
+
+# uga quadrato
+
+uga.begin_fill()
+for x in range(4):
+    uga.forward(lun)
+    uga.left(90)
+uga.forward(lun)
+uga.end_fill()
+
+# ninja quadrato
+ninja.begin_fill()
+for x in range(4):
+    ninja.forward(lun)
+    ninja.left(90)
+ninja.forward(lun)
+ninja.end_fill()
+
+uga.begin_fill()
+for x in range(5):
+    uga.forward(lun)
+    uga.left(360/5)
+uga.end_fill()
+
+ninja.begin_fill()
+for x in range(5):
+    ninja.forward(lun)
+    ninja.left(360/5)
+ninja.end_fill()
+
+
+
+
+
+
+
+
+turtle.done()

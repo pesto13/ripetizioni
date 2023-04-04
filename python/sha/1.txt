@@ -1,0 +1,29 @@
+import turtle
+
+lunghezza_lato = 100
+
+uga = turtle.Turtle()
+
+for strato in range(3):
+
+    for contatore in range(4):
+        uga.forward(lunghezza_lato)
+        uga.right(90)
+
+    uga.left(180)
+
+    for contatore in range(4):
+        uga.forward(lunghezza_lato)
+        uga.left(90)
+
+    uga.left(90)
+    uga.forward(lunghezza_lato)
+    uga.left(90)
+    
+
+
+
+
+
+
+turtle.done()

@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define MAX 200
+
+int main(){
+    
+    int n = 0;
+    int i = 0,matricola[MAX],anni[MAX],pagaOra[MAX],stipendio = 0,scelta = 0,dim = 0,somma = 0,valore = 0;
+    float stipendioMax = 0.0,stipendioMin = 0.0 ,stipendioMedio = 0.0;
+    char mansione[MAX],sex[MAX];

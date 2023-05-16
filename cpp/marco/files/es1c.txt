@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main(){
+
+    int celcius;
+    FILE *MyFile;
+
+
+
+    // ofstream MyFile("temperature.txt"); questo è nel c++
+    MyFile =  fopen("tempc.txt","w");
+
+
+    for(celcius=-100;celcius<=100;celcius++){
+
+        /* MyFile<<celcius<<"\t"<<(9/5* celcius) + 32<<"\t"<<celcius+273.15;
+        MyFile<<endl; */
+
+        fprintf(MyFile, "%d  %.2f  %.2f \n", celcius, (9.0/5* celcius), celcius+273.15);
+
+    }
+
+
+    // MyFile.close();
+    fclose(MyFile);
+
+
+    return 0;
+}

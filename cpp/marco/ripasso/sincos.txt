@@ -1,0 +1,19 @@
+#include<iostream>
+#include<fstream>
+#include<cmath>
+using namespace std;
+
+
+int main(){
+
+    ofstream file("sincos.txt");
+    int i;
+    int rad;
+    for(i=0;i<360;i++){
+        
+        file<<i<<"\t"<<sin(i*3.14/180)<<"\t"<<cos(i*3.14/180)<<endl;
+    }
+
+    file.close();
+    return 0;
+}

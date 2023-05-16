@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<math.h>
+
+int numeriInteri(int,int,int);
+
+int main(){
+
+    int a, b, c;
+    int risultato;
+
+    printf("Inserisci valore: ");
+    scanf("%d", &a);
+
+    printf("Inserisci valore: ");
+    scanf("%d", &b);
+
+    printf("Inserisci valore: ");
+    scanf("%d", &c);
+
+    risultato = numeriInteri(a, b, c);
+
+
+    printf("Risultato: %d", risultato);
+    
+    
+    return 0;
+}
+
+
+int numeriInteri(int a ,int b ,int c){
+
+    int max;
+    int r1, r2, r3;
+
+    r1=a-b;
+    r2=b-c;
+    r3=a-c;
+
+    r1=abs(r1);
+    r2=abs(r2);
+    r3=abs(r3);
+
+    if(r1>r2 && r1>r3)
+        max = r1;
+    else if(r2>r1 && r2>r3)
+        max = r2;
+    else
+        max = r3;
+
+    return max;
+}
+
+
+
+

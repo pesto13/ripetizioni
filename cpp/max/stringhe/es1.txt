@@ -1,0 +1,46 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+
+int main(){
+
+    const int MAX = 32;
+    char s[MAX];
+    int len=0;
+    int i=0;
+    int flag = 1;
+    cout<<"inserisci stringa: ";
+    cin>>s;
+
+    cout<<s;
+
+
+    cout<<strlen(s);
+
+    for(i=0;s[i]!='\0';i++){
+        len++;
+    }
+
+    cout<<len;
+
+
+    ////////////////////////
+
+    for(i=0;i<strlen(s)/2;i++){
+        if(s[i]!=s[strlen(s)-1-i]){
+            flag = 0;
+        }
+    }
+
+    if(flag == 1){
+        cout<<"lo è";
+    }else{
+        cout<<"non lo è";
+    }
+
+
+
+
+    return 0;
+}

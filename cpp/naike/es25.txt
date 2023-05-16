@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+
+int main(){
+
+
+    int valore;
+    // int flag = 1;
+    int i;
+
+
+    cout<<"Inserisci valore: ";
+    cin>>valore;
+
+
+    /* for(i=2;i<valore;i++){
+        if(valore%i==0){
+            flag = 0;
+        }
+    } */
+
+    i=2;
+    while(i<valore && valore%i!=0){
+        i++;
+    }
+
+    if(i==valore){
+        cout<<"primo";
+    }else{
+        cout<<"non primo";
+    }
+
+    /* if(flag==1){
+        cout<<"e primo";
+    }else{
+        cout<<"non lo e";
+    } */
+
+
+
+    return 0;
+}

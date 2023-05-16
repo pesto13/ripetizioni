@@ -1,0 +1,90 @@
+#include<iostream>
+using namespace std;
+
+
+
+
+int main(){
+
+    
+    int giorno, mese;
+
+    int giorniDiff;
+
+    float meseT;
+
+    /* do{
+        cout<<"Inserisci giorno: ";
+        cin>>giorno;
+    }while(giorno<1 || giorno>30); */
+
+
+    cout<<"Inserisci giorno: ";
+    cin>>giorno;
+
+
+    cout<<"Inserisci mese: ";
+    cin>>mese;
+
+
+
+    if( (giorno>=1 && giorno<=30) && (mese>=1 && mese<=12) ){
+
+        if(mese==6){
+            giorniDiff = 8 - giorno;
+        }else if(mese == 9){
+            // se è negativo siamo in vacanza 
+            giorniDiff = giorno - 12;
+
+            if(giorniDiff>=0){
+                giorniDiff = (30 - giorno) + (30 * 8) + 8;
+            }
+            
+        }else if(mese >=7 && mese<=8){
+
+            giorniDiff = -1;
+
+        }else{
+
+            giorniDiff = (30 - giorno) + (30 * (6-mese-1)) + 8;
+        }
+        
+        
+        if(giorniDiff<0){
+            cout<<"Siamo in vacanza";
+        }else{
+            cout<<"mancano "<<giorniDiff<<" giorni alla fine della scuola";
+        }
+
+
+
+        if(mese>=1 && mese<=3){
+
+        }else if(mese>=4 && mese<=6){
+            
+        }else if(mese>=7 && mese<=9){
+
+        }else if(mese>=10 && mese<=12){
+
+        }
+
+        meseT = mese/3.0;
+
+        if(mese<=1){
+            
+        }else if(mese<=2){
+
+        }else if(mese<=3){
+        
+        }else if(mese<=4){
+        
+        }
+
+    }else{
+        cout<<"Dati non validi";
+    }
+
+
+
+    return 0;
+}

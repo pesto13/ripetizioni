@@ -1,0 +1,42 @@
+#include<iostream>
+#include<cstring>
+#include<cstdlib>
+using namespace std;
+
+
+
+int main(){
+    const int MAX = 100;
+    char str[MAX];
+
+
+    cout<<"inserisci la stringa: ";
+    
+
+    /* per leggere in input hai 2 modi diversi, usi il cin per la singola parola
+        usi il gets per leggere una frase */
+    cin>>str;
+    
+    // while(getchar() != '\n');
+
+    gets(str);
+
+    cin.getline(str, MAX);
+    
+
+    ////////////////////
+
+    cout<<strlen(str);
+    strcpy(str, "ciao");    //str = "ciao"      strcpy(stb, str)
+    cout<<str<<endl;
+    strcmp("a", "b");        //"a" == "b"
+    strcat(str, " mondo");   //str = str + "mondo"
+    cout<<str;
+
+
+    toupper()
+    tolower()
+    ////////////////////
+
+    return 0;
+}

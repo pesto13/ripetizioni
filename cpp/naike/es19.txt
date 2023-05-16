@@ -1,0 +1,40 @@
+#include<iostream>
+
+using namespace std;
+
+
+
+int main(){
+
+    
+
+    int ordine;
+    float costo = 0;
+    float costoSingolo;
+
+    do{
+        cout<<"Inserisci ordine";
+        cin>>ordine;
+        costoSingolo = 5 * ordine;
+
+        if(ordine>30 && ordine<50){
+            costoSingolo = costoSingolo*0.9;
+        }
+        else if(ordine>50){
+            costoSingolo = costoSingolo*0.85;
+        }
+       
+        
+        costo = costo + costoSingolo;
+        
+
+
+    }while(ordine>0);
+    
+
+    cout<<costo;
+
+
+
+    return 0;
+}

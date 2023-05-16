@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+
+
+int main(){
+
+    FILE *file;
+    file = fopen("sincos.txt","r");
+    char s[100];
+    
+    int g;
+    float z, c;
+    float somma;
+
+    /* while(fgets(s, 100, file)){
+        
+
+        printf("%s", s);
+    } */
+
+    while(fscanf(file,"%d%f%f", &g, &z, &c)!=EOF){
+        somma = g+z+c;
+        printf("%d\t%f\t%f\t%f\n", g, z, c, somma);
+    }
+
+    
+    fclose(file);
+    return 0;
+}

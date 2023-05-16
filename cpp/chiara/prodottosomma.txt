@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<math.h>
+
+int diffProdottoSomma(int,int,int);
+
+int main(){
+
+    int a, b, c;
+    int risultato;
+
+    printf("Inserisci valore: ");
+    scanf("%d", &a);
+
+    printf("Inserisci valore: ");
+    scanf("%d", &b);
+
+    printf("Inserisci valore: ");
+    scanf("%d", &c);
+
+    risultato = diffProdottoSomma(a, b, c);
+
+
+    printf("Risultato: %d", risultato);
+    
+    
+    return 0;
+}
+
+
+int diffProdottoSomma(int a ,int b ,int c){
+
+
+    int differenza = (a*b*c)-(a+b+c);
+    
+
+    return differenza;
+
+}
+
+
+
+

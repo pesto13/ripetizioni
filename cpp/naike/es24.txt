@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+
+int main(){
+
+
+    int valore;
+    int risultato = 1;
+    int i;
+
+
+    cout<<"Inserisci valore: ";
+    cin>>valore;
+
+
+
+    for(i=1;i<=valore;i++){
+        risultato = risultato * i;
+    }
+
+
+    cout<<"Risultato: "<<risultato;
+
+    return 0;
+}

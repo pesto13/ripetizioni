@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>PRINCIPALE</title>
+        <script src="calcolo.js"></script>
+        <link rel="stylesheet" href="calcolatrice.css">
+    </head>
+
+    
+
+    <body>
+        
+        <div class="calcolatrice">
+
+            
+            <div class="sopra orizzontale">
+
+                
+                <h1>Calcolatrice</h1>
+                <p>Creiamo una calcolatrice semplice</p>
+                <p>n1: </p><input type="number" id="n1" >
+                <br/>
+                <p>n2: </p><input type="number" id="n2">
+            </div>
+            <div class="sotto orizzontale">
+
+            
+                <p>operazione: </p>
+
+                
+                <p>somma</p><input type="radio" id="op" name="operazione_scelta" value="+">
+                    
+                <p>differenza</p><input type="radio" id="op" name="operazione_scelta" value="-">
+                
+                <p>moltiplicazione</p><input type="radio" id="op" name="operazione_scelta" value="*">
+
+                <p>divisione</p><input type="radio" id="op" name="operazione_scelta" value="/">
+                    
+                
+                
+                <br/>
+                <br/>
+                <p>risultato: </p><input type="number" id="risultato" readonly>
+
+
+                <button onclick="calcolaRisultato()">calcola il risultato: </button>
+            </div>
+            
+        </div>
+        
+    </body>
+
+
+
+</html>

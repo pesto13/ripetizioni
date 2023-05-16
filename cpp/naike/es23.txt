@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+
+int main(){
+
+
+    int numero=1;
+    int somma = 0;
+    int contatore = 0;
+    int i;
+
+    while(contatore<3){
+        
+        for(i=1;i<numero;i++){
+            if(numero%i==0){
+                somma = somma + i;
+            }
+        }
+        // se numero è perfetto
+        if( numero == somma){
+            contatore++;
+            cout<<"il numero e perfetto: "<<numero<<endl;
+        }
+
+        numero++;
+    }
+    
+    return 0;
+}

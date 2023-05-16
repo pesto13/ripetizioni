@@ -1,0 +1,31 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+
+
+int main(){
+
+    int celcius;
+    float far;
+    float kelv;
+    
+    ifstream MyFile("tempeture.txt");
+
+
+    if(!MyFile.is_open()){
+        printf("error");
+        return 1;
+    }
+
+
+    while(MyFile>>celcius>>far>>kelv){
+        cout<<celcius<<" "<<far<<" "<<kelv<<endl;
+    }
+
+
+    MyFile.close();
+
+
+    return 0;
+}

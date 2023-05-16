@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+#define PIGREGO 3.14
+
+float calcolaCerchio(float);
+
+
+int main(){
+
+    float r1, r2, a1, a2, corona;
+
+    printf("Inserisci Raggio: ");
+    scanf("%f", &r1);
+
+    printf("Inserisci Raggio: ");
+    scanf("%f", &r2);
+
+    a1 = calcolaCerchio(r1);
+    a2 = calcolaCerchio(r2);
+    
+    if(a1>a2)
+        corona = a1 - a2;
+    else
+        corona = a2 - a1;
+
+    printf("La corona vale: %f", corona);
+    return 0;
+}
+
+
+
+float calcolaCerchio(float r){
+
+    float a;
+
+    a = r*r*PIGREGO;
+
+    return a;
+}
+

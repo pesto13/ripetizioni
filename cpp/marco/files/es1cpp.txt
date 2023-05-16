@@ -1,0 +1,25 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+
+
+int main(){
+
+    int celcius;
+    
+    ofstream MyFile("temperature.txt");
+    
+
+    for(celcius=-100;celcius<=100;celcius++){
+
+        MyFile<<celcius<<"\t"<<(9/5* celcius) + 32<<"\t"<<celcius+273.15;
+        MyFile<<endl;
+    }
+
+
+    MyFile.close();
+
+
+    return 0;
+}

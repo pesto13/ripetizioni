@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+#define PI 3.14159265
+
+
+
+int main(){
+
+    
+    FILE *file;
+    file = fopen("lolol.txt", "w");
+    int i;
+    float rad;
+    for(i=0;i<360;i++){
+        rad = i*PI/180;
+
+        fprintf(file, "%d\t%f\t%f\n", i, sin(rad), cos(rad));
+    }
+
+    fclose(file);
+    return 0;
+}

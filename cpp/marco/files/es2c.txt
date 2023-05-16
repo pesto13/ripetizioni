@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+
+
+    FILE *MyFile;
+
+    int celcius;
+    float kelvin;
+    float far;
+    int i = 0;
+
+   
+    MyFile =  fopen("tem.txt","r");
+
+    if(MyFile == NULL){
+        printf("error");
+        return 1;
+    }
+
+    while(fscanf(MyFile, "%d%f%f", &celcius, &far, &kelvin) != EOF){
+        printf("%d %f %f \n", celcius, far, kelvin);
+    }
+
+   
+
+    // MyFile.close();
+    fclose(MyFile);
+
+
+    return 0;
+}

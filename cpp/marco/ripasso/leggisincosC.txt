@@ -1,0 +1,31 @@
+#include<iostream>
+#include<fstream>
+#include<cmath>
+using namespace std;
+
+
+
+
+int main(){
+
+    ifstream file("sincos.txt");
+    int i;
+    char s[100];
+    
+    float g,z,c,somma;
+
+    /* while(file.getline(s, 100)){
+        
+
+        cout<<s<<endl;
+    } */
+
+    while(file>>g>>z>>c){
+        somma = g+z+c;
+        cout<<g<<z<<c<<somma<<endl;
+    }
+
+    
+    file.close();
+    return 0;
+}

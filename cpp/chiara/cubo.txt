@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+
+float calcola_cubo(float lato); // prototipo
+
+int main(){
+
+    float l, cubo;
+
+    do{
+        printf("Inserisci il valore del lato: ");
+        scanf("%f", &l);
+    }while(l<0);
+
+    ///////////
+    printf("valore nel main: %f\n", l);
+    cubo = calcola_cubo(l);    // chiamata alla funzione
+
+    printf("Il valore del cubo: %f", cubo);
+
+    return 0;
+}
+
+// lascio il concetto di guardare se il numero è positivo nel main
+// perchè la funzione calcola_cubo di per se funziona anche su numeri negativi
+// è lo specifico esercizio che vuole l>0 non la funzione.
+
+float calcola_cubo(float lato){ //definizione della funzione calcola_cubo
+    printf("valore nella funzione: %f\n", lato);
+    float risultato;
+    risultato = lato * lato * lato;
+    return risultato;
+}

@@ -1,26 +1,25 @@
+class GestorePagamenti {
+
+protected:
+    float saldo;
+
+public:
+
+    GestorePagamenti();
 
 
-class GestorePagamenti{
-
-    protected:
-        float saldo;
-
-    public:
-        virtual float daiResto(float spesa);
-        virtual bool paga(float soldiPlus);
-
-        float getSaldo();
-        void setSaldo(float soldiPlus);
-        void addSaldo(float soldiPlus);
+    float getSaldo();
+    void setSaldo(float soldiPlus);
+    void addSaldo(float soldiPlus);
 };
 
 
-class GestoreMoneta : public GestorePagamenti{
-    
-    public:
-        
-        GestoreMoneta();
+class GestoreMoneta : public GestorePagamenti {
 
-        float daiResto(float spesa);
+public:
 
+    GestoreMoneta();
+
+    float daiResto();
+    bool paga(float soldiPlus);
 };

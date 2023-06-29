@@ -1,0 +1,5 @@
+C:/Users/bello/Desktop/ripetizioni/cpp/mass/distributore/build/CMakeFiles/yt.dir
+C:/Users/bello/Desktop/ripetizioni/cpp/mass/distributore/build/CMakeFiles/package.dir
+C:/Users/bello/Desktop/ripetizioni/cpp/mass/distributore/build/CMakeFiles/package_source.dir
+C:/Users/bello/Desktop/ripetizioni/cpp/mass/distributore/build/CMakeFiles/edit_cache.dir
+C:/Users/bello/Desktop/ripetizioni/cpp/mass/distributore/build/CMakeFiles/rebuild_cache.dir

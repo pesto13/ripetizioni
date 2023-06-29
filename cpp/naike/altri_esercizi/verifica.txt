@@ -2,11 +2,9 @@
 using namespace std;
 
 
-
-
 int main(){
 
-    int N_classi=1;
+    int N_classi;
     int N_sezioni;
     
     int i,j;
@@ -15,27 +13,32 @@ int main(){
     int nstud;
     float quotasingola;
     float percentualeMancante;
-    int meritevoli;
+    
     
 
     int primaquota=0, secondaquota=0, terzaquota=0, quartaquota=0, quintaquota=0;
     int primastud=0, secondastud=0, terzastud=0, quartastud=0, quintastud=0;
 
+    std::cout<<"Inserisci il numero di classi: ";
+    std::cin>>N_classi;
 
     for(i=0;i<N_classi;i++){
 
-        cout<<"Inserire quante sezioni ci sono";
-        cin>>N_sezioni;
+        std::cout<<"Inserire quante sezioni ci sono";
+        std::cin>>N_sezioni;
         for(j=0;j<N_sezioni;j++){
             
-            cout<<"Inserisci sezione: ";
-            cin>>sezione;
-            cout<<"Inserisci numero di studenti nella (classe-sezione): ";
-            cin>>nstud;
-            cout<<"Inserisci quota singola: ";
-            cin>>quotasingola;
+            std::cout<<"Inserisci sezione: ";
+            std::cin>>sezione;
+            std::cout<<"Inserisci numero di studenti nella (classe-sezione): ";
+            std::cin>>nstud;
+            std::cout<<"Inserisci quota singola: ";
+            std::cin>>quotasingola;
+
+            percentualeMancante=100-(quotasingola/(100*nstud))*100;
             
-            
+            std::cout<<"percentuale mancante di questa (classe-sezione): "<<percentualeMancante<<endl;
+
             if(i==0){
                 primastud=primastud+nstud;
                 primaquota=primaquota+quotasingola;
@@ -57,23 +60,17 @@ int main(){
                 quintaquota=quintaquota+quotasingola;
             }
             
-
-            ///////// 
-
-            cout<<"Inserisci quanti studenti sono meritevoli: ";
-            cin>>meritevoli;
-
-            cout<<i+1<<" - "<<sezione<<" - "<<meritevoli<<endl<<endl;
+            
         }
     }
 
 
-    cout<<"QUOTA VERSATA\tNUMERO STUDENTI\tORE DISPONIBILI"<<endl;
-    cout<<primaquota<<"\t"<<primastud<<"\t"<<(int)((primaquota)/200*0.75)<<endl;
-    cout<<secondaquota<<"\t"<<secondastud<<"\t"<<(int)(secondaquota*0.4)/30<<endl;
-    cout<<terzaquota<<"\t"<<terzastud<<"\t"<<(int)(terzaquota*0.4)/30<<endl;
-    cout<<quartaquota<<"\t"<<quartastud<<"\t"<<(int)(quartaquota*0.4)/30<<endl;
-    cout<<quintaquota<<"\t"<<quintastud<<"\t"<<(int)(quintaquota*0.4)/30<<endl;
+    std::cout<<"QUOTA VERSATA\tNUMERO STUDENTI\tORE DISPONIBILI"<<endl;
+    std::cout<<primaquota<<"\t"<<primastud<<"\t"<<(int)(primaquota*0.4)/30<<endl;
+    std::cout<<secondaquota<<"\t"<<secondastud<<"\t"<<(int)(secondaquota*0.4)/30<<endl;
+    std::cout<<terzaquota<<"\t"<<terzastud<<"\t"<<(int)(terzaquota*0.4)/30<<endl;
+    std::cout<<quartaquota<<"\t"<<quartastud<<"\t"<<(int)(quartaquota*0.4)/30<<endl;
+    std::cout<<quintaquota<<"\t"<<quintastud<<"\t"<<(int)(quintaquota*0.4)/30<<endl;
 
 
 

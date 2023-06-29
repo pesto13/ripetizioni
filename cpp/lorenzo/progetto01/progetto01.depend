@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1684599605 source:c:\users\bello\desktop\ripetizioni\cpp\lorenzo\progetto01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<time.h>
+	"progetto01.h"
+
+1684599668 c:\users\bello\desktop\ripetizioni\cpp\lorenzo\progetto01\progetto01.h
+
+1684597856 source:c:\users\bello\desktop\ripetizioni\cpp\lorenzo\progetto01\progetto01.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"progetto01.h"
+

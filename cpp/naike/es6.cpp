@@ -1,8 +1,11 @@
 #include<iostream>
 using namespace std;
 
+
+
 int main(){
 
+    const int MAX = 19;
     int a, b, c;
 
     cout<<"inserisci a: ";
@@ -14,6 +17,7 @@ int main(){
         cout<<"non lo sono";
     }
 
+    cout<<MAX;
 
 
     return 0;

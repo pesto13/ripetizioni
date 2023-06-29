@@ -1,0 +1,33 @@
+#include<iostream>
+
+using namespace std;
+
+
+
+void swap(int x, int y);
+
+int main(){
+
+    int a = 3, b = 214;
+
+    cout<<a<<" "<<b<<endl;
+
+    swap(a, b);
+    cout<<a<<" "<<b<<endl;
+
+
+    return 0;
+
+}
+
+
+void swap(int x, int y){
+
+    int swap;
+    swap = x;
+    x = y;
+    y = swap;
+
+    cout<<x<<" "<<y<<endl;
+
+}

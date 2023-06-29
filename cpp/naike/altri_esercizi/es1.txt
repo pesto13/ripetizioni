@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+
+
+int main(){
+
+    int cont=0;
+    int i;
+    float Celsius;
+
+    for(i=0;i<31;i++){
+        
+        cout<<"Inserisci la temperatura";
+        cin>>Celsius;
+
+        if(Celsius<0)
+            cont++;
+
+
+    }
+
+    cout<<"Il numero di giorni sotto zero: "<<cont;
+
+    return 0;
+
+
+}

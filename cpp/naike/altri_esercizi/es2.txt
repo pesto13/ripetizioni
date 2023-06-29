@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+
+
+
+int main(){
+
+    int cont=0;
+    int i;
+
+    float voto;
+    float sommaVoti=0;
+
+    float sommaMedie = 0;
+
+    for(i=0;i<20;i++){
+        
+        sommaVoti = 0;
+
+        std::cout<<"Inserisci matematica: ";
+        std::cin>>voto;
+        sommaVoti = sommaVoti+voto;
+        std::cout<<"Inserisci Fisica: ";
+        std::cin>>voto;
+        sommaVoti = sommaVoti+voto;
+        std::cout<<"Inserisci Italiano: ";
+        std::cin>>voto;
+        sommaVoti = sommaVoti+voto;
+         std::cout<<"Inserisci Storia: ";
+        std::cin>>voto;
+        sommaVoti = sommaVoti+voto;
+         std::cout<<"Inserisci Informatica: ";
+        std::cin>>voto;
+        sommaVoti = sommaVoti+voto;
+         std::cout<<"Inserisci Scienze: ";
+        std::cin>>voto;
+        sommaVoti = sommaVoti+voto;
+         std::cout<<"Inserisci Chimica: ";
+        std::cin>>voto;
+        sommaVoti = sommaVoti+voto;
+         std::cout<<"Inserisci Motoria: ";
+        std::cin>>voto;
+        sommaVoti = sommaVoti+voto;
+
+
+        sommaMedie = sommaMedie + sommaVoti/8;
+        std::cout<<"lo studente ha media: "<<sommaVoti/8<<endl;
+
+    }
+    
+
+    cout<<"la media finale di tutto è: "<<sommaMedie/20;
+
+    
+    
+
+    return 0;
+
+
+}

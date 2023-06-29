@@ -3,20 +3,15 @@
 
 int main(){
 
-    int totaleAmmalati = 0, percentualeGuarigione = 0, contatore = 0;
 
-    printf("Inserisci numero di ammalati: ");
-    scanf("%d", &totaleAmmalati);
-    printf("Inserisci percentuale di guarigione giornaliere: ");
-    scanf("%d", &percentualeGuarigione);
+    int a = 21;
 
-    while(totaleAmmalati>=100){
-        contatore++;
-        totaleAmmalati = totaleAmmalati - (totaleAmmalati * percentualeGuarigione / 100);
+    b = a + 3;
+    int b;
 
-    }
 
-    printf("sono serviti: %d giorni", contatore);
 
+    printf("%f", b);
+    
     return 0;
 }

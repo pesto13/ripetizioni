@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+const int numStudenti = 20;
+const int numMaterie = 8;
+
+int main() {
+    float mediaStudente;
+    string nomeStudente;
+    float voto, mediaClasse = 0.0;
+
+    for (int i = 0; i < numStudenti; i++) {
+        mediaStudente = 0.0;
+        
+        cout << "Inserisci il nome dello studente " << i + 1 << ": ";
+        cin >> nomeStudente;
+
+        for (int j = 0; j < numMaterie; j++) {
+            cout << "Inserisci il voto per la materia " << j + 1 << " dello studente " << nomeStudente << ": ";
+            cin >> voto;
+            mediaStudente += voto;
+        }
+
+        mediaStudente /= numMaterie;
+        mediaClasse += mediaStudente;
+
+        cout << "Media dei voti di " << nomeStudente << ": " << mediaStudente << endl;
+    }
+
+    mediaClasse /= numStudenti;
+    cout << "Media dei voti della classe: " << mediaClasse << endl;
+
+    return 0;
+}

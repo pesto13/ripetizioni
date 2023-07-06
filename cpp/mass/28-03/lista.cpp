@@ -46,7 +46,6 @@ class Lista{
     // inserire un nuovo elemento
     void inserisci(T valore){
         Node<T>* nuovoNodo = new Node<T>(valore);
-
         if(testa == NULL){
             
             testa = nuovoNodo;
@@ -65,7 +64,49 @@ class Lista{
             cout<<temp->getValore()<<" ";
             temp = temp->getProssimo();
         }
+        cout<<endl;
     }
+
+    
+    void elimina(T valore){
+
+        if(testa == NULL){
+            return;
+        }
+
+        Node<T>* temp = testa;
+
+        //se è il primo elemento della lista
+        if(temp->getValore() == valore){
+            testa= testa->getProssimo();
+            delete temp;
+        }
+
+        // tutti gli altri elementi
+        else{
+            while(temp->getProssimo()!=NULL && temp->getProssimo()->getValore()!=valore){
+                temp = temp->getProssimo();
+            }
+
+            if(temp->getProssimo()!=NULL){
+                /* Node<T>* cancellami = temp->getProssimo();
+                temp->setProssimo(cancellami->getProssimo());
+                delete cancellami; */
+
+                temp->setProssimo(temp->getProssimo()->getProssimo());
+                temp = temp->getProssimo();
+                delete temp;
+                
+            }
+
+        }
+        
+
+        
+    }
+
+
+
 };
 
 
@@ -78,9 +119,11 @@ int main(){
     l.inserisci(3);
     l.inserisci(6);
 
-    l.stampa();
-
     
+    l.stampa();
+    l.elimina(3);
+    
+    l.stampa();
 
     return 0;
 }

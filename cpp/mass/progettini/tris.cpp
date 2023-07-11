@@ -71,7 +71,7 @@ class Tris{
 
         // verificare se posso scrivere il simbolo
         bool isValid(int r, int c){
-            cout<<"controllo";
+           
             if(r<0 || r >2)
                 return false;
 

@@ -8,17 +8,9 @@ using namespace std;
 
 int main(){
 
-    navale n;
-    int winner;
-    winner = n.run();
+    Tris t;
 
-    n.stampacaso();
-
-    if(winner == 1){
-        cout<<"hai vinto";
-    }else{
-        cout<<"hai perso";
-    }
+    t.run();
 
 
     return 0;

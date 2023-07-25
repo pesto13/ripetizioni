@@ -2,15 +2,17 @@
 #include "tris.cpp"
 #include "connect4.cpp"
 #include "navale.cpp"
+#include "memory.cpp"
 
 using namespace std;
 
 
 int main(){
 
-    Tris t;
+    Memory m;
 
-    t.run();
+    m.run();
+    
 
 
     return 0;

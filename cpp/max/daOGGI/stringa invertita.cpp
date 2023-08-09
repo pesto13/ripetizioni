@@ -13,7 +13,6 @@ int main()
 
     // while(getchar()!='\n');
 
-
     cin.getline(s, 100);
     cout<<s;
     tf(s, old, newts);

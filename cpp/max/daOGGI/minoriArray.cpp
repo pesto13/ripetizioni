@@ -41,7 +41,7 @@ void sta(int v[], int dim){
         cout<<v[i]<<" ";
     }
 }
-int  nm(int v[], int dim, int p){
+int nm(int v[], int dim, int p){
     int i, conta=0;
   
      for(i=0; i<dim; i++){

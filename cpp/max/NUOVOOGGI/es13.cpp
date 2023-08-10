@@ -1,0 +1,4 @@
+/* 
+Leggere una stringa e contare quanto caratteri diversi tra loro contiene.
+
+ */

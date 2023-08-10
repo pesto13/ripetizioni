@@ -1,0 +1,4 @@
+/* 
+Leggi una stringa e verifica che non ci siano caratteri ripetuti in essa
+
+ */

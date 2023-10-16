@@ -1,0 +1,3 @@
+import funz
+
+funz.poligono()

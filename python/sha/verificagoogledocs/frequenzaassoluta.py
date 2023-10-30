@@ -1,22 +1,18 @@
 import random
 
+# fa un solo tiro
 def lancia_dadi():
     return random.randint(2,12)
 
+# quello che crea una lista di 0
 def prepara_lista():
-    l = []
-    for _ in range(11):
-        l.append(0)
-    return l
+    return [0 for _ in range(11)]
 
 def stampa():
     for i in range(len(l)):
         print(i+2, ": ", end="")
         print("    ", end="")
-        for _ in range(l[i]):
-            print("*", end="")
-        print("")
-        
+        print("*"*l[i])
 
 l = prepara_lista()
 for i in range(100):

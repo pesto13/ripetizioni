@@ -1,17 +1,23 @@
 import turtle
+import random
 
-def poligono(n, l, rgb):
+def poligono(n, lunghezza_lati = 3, rgb = (0, 0, 0)):
+    """
+    Disegna un poligono regolare
+
+    n (int): Quanti lati ha il poligono
+    lunghezza_lati (int): La lunghezza del lato del poligono
+    rgb: colore
+    """
     turtle.colormode(255)
     turtle.fillcolor(rgb)
     turtle.begin_fill()
     for _ in range(n): 
-        turtle.forward(l) 
+        turtle.forward(lunghezza_lati) 
         turtle.left(360 / n)
     turtle.end_fill()
 
-def line(spessore, lunghezza, xy):
-    # se vero -> destra
-    # se falso -> alto
+def line(spessore, lunghezza, xy = True):
     if(xy):
         turtle.setheading(0)
     else:

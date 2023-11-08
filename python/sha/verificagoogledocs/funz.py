@@ -1,4 +1,8 @@
 import funzgf
+import turtle
+import es1
 
 
-funzgf.poligono(5, 20, (120, 120, 100))
+l = es1.genera_lista_random(5)
+
+print(l)

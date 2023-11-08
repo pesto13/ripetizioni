@@ -12,21 +12,8 @@ def line(spessore, lunghezza, xy):
     turtle.forward(lunghezza)
 
 
-def genera_lista_random(n, a, b):
+def genera_lista_random(n, min = 0, max = 100):
     l = []
     for _ in range(n):
-        l.append(random.randint(a, b))
+        l.append(random.randint(min, max))
     return l
-
-
-for i in range(6):
-    spessore = random.randint(1, 10)
-    lunghezza = random.randint(100, 200)
-    if (i < 3):
-        xy = True
-    else:
-        xy = False
-    # da spostarla
-    line(spessore, lunghezza, xy)
-
-turtle.done()

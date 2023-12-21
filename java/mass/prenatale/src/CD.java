@@ -1,17 +1,24 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class CD {
 
     private Canzone[] canzoni;
     private String autore;
-
+    private Date dataNascita;
     private String titoloCD;
 
+    private Date dataCreazione;
+
+
     // Costruttore
-    public CD(Canzone[] canzoni, String autore, String titoloCD) {
+    public CD(Canzone[] canzoni, String autore, String titoloCD, Date dataCreazione, Date dataNascita) {
         this.canzoni = canzoni;
         this.autore = autore;
         this.titoloCD = titoloCD;
+        this.dataCreazione = dataCreazione;
+        this.dataNascita = dataNascita;
     }
 
     // Getter per le canzoni
@@ -34,6 +41,18 @@ public class CD {
         this.autore = autore;
     }
 
+    public Date getDataCreazione() {return this.dataCreazione; }
+
+    public void setDataCreazione(Date dataCreazione){ this.dataCreazione = dataCreazione;}
+
+    public Date getDataNascita() {
+        return dataNascita;
+    }
+
+    // Setter per dataNascita
+    public void setDataNascita(Date dataNascita) {
+        this.dataNascita = dataNascita;
+    }
 
     //////////////////////////////////////////////
 
@@ -62,5 +81,15 @@ public class CD {
 
     public void setTitoloCD(String titoloCD) {
         this.titoloCD = titoloCD;
+    }
+
+
+    public void stampaCD(){
+        System.out.println("Autore: " + autore);
+        System.out.println("Titolo CD: " + titoloCD);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormattata = sdf.format(dataCreazione);
+        System.out.println("Data Creazione: " + dataFormattata);
     }
 }

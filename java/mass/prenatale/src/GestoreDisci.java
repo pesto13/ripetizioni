@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class GestoreDisci {
 
     private CD[] gestore;
@@ -44,6 +46,25 @@ public class GestoreDisci {
         return cdTrovati;
     }
 
-    //trova il CD sul quale modificare i dati
-    //cd.modificaCD
+
+    public void getCDWithDate(Date givenDate){
+        for(int i = 0; i < gestore.length; i++){
+            if(gestore[i].getDataCreazione().equals(givenDate)){
+                gestore[i].stampaCD();
+            }
+        }
+    }
+
+    public void getEtàMinimaAutore(){
+        Date minimo = gestore[0].getDataNascita();
+        int posMinima = 0;
+        for(int i = 1; i < gestore.length; i++){
+            if(gestore[i].getDataNascita().before(minimo)){
+                minimo = gestore[i].getDataNascita();
+                posMinima = i;
+            }
+        }
+        System.out.println(gestore[posMinima].getAutore());
+    }
+
 }

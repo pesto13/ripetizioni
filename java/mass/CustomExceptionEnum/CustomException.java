@@ -1,5 +1,4 @@
 
-
 enum TipoErrore {
     ERRORE_INPUT,
     ERRORE_OUTPUT,

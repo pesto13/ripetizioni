@@ -7,8 +7,6 @@ using namespace std;
 
 
 int main(){
-
-    
     string line;
     ifstream f2;
 
@@ -18,11 +16,6 @@ int main(){
         cout<<line<<endl;
     }
     f2.close();
-
-    
-
-
-
 
     return 0;
 }

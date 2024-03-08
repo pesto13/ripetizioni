@@ -13,7 +13,7 @@ int main(){
     h = (b-a)/n;
     int x = a + h;
 
-    for(i=0; i < n - 1; i++){
+    for(i=1; i < n; i++){
         integ = integ + f(x);
         x += h;
     }

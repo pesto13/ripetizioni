@@ -5,4 +5,3 @@ async def getweather():
         weather = await client.get('Trento')
         print(weather.current.temperature)
         print(weather.current.description)
-

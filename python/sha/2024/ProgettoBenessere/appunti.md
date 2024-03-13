@@ -1,7 +1,7 @@
 TODO
 
--chiedere come sta => mandare la frase
 -report settimanale
+-obiettivi giornata: 
 
 -meteo
 

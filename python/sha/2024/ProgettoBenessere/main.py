@@ -17,5 +17,4 @@ if __name__ == '__main__':
         else:
             print('Non ho capito cosa intendevi')
             
-        
         print(frase)

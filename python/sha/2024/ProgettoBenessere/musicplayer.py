@@ -39,4 +39,3 @@ def ask_to_stop():
 file_path = "lofi.mp3"
 threading.Thread(target=play_music, args=(file_path, )).start()
 threading.Thread(target=ask_to_stop).start()
-

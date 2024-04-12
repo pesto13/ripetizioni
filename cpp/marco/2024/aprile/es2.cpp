@@ -1,5 +1,5 @@
-
 #include<iostream>
+#include<fstream>
 using namespace std;
 
 double funzione(double x){
@@ -22,21 +22,22 @@ int main(){
     cout<<"Inserisci a: ";
     cin>>x;
 
-    cout<<"Inserisci a: ";
+    cout<<"Inserisci b: ";
     cin>>xf;
 
     cout<<"Inserisci n: ";
     cin>>n;
 
     double h = (xf-x)/n;
+    
+    ofstream outputFile("output.txt");
 
     for(int i=0;i<n;i++){
-        cout<<x<<"\t"<<funzione(x)<<"\t"<<derivata(x, h)<<"\t"<<funzione(x+h)<<endl;
+        outputFile<<x<<"\t"<<funzione(x)<<"\t"<<derivata(x, h)<<"\t"<<funzione(x+h)<<endl;
         y = y + h * eqdiff(x, y);
         x = x + h;
     }
-
-    cout<<y;
-
+    outputFile<<y;
+    outputFile.close();
     return 0;
 }

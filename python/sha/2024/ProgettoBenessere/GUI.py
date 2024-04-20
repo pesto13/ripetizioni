@@ -8,19 +8,42 @@ def rispondi(text, frase_text):
     risposta = text
     if risposta == 'Bene' or risposta == 'Male':
         frase = frasi.restituisci_frase(risposta)
-        frase_text.config(state=tk.NORMAL)  # Abilita la modifica del Text
-        frase_text.delete('1.0', tk.END)  # Pulisce il Text prima di inserire il nuovo valore
-        frase_text.insert('1.0', frase)  # Inserisce la nuova frase nel Text
-        frase_text.config(state=tk.DISABLED)  # Disabilita la modifica del Text
+        frase_text.config(state=tk.NORMAL)
+        frase_text.delete('1.0', tk.END)
+        frase_text.insert('1.0', frase)
+        frase_text.config(state=tk.DISABLED)
     else:
-        frase_text.config(state=tk.NORMAL)  # Abilita la modifica del Text
-        frase_text.delete('1.0', tk.END)  # Pulisce il Text
-        frase_text.insert('1.0', 'Non ho capito cosa intendevi')  # Inserisce un messaggio predefinito
-        frase_text.config(state=tk.DISABLED)  # Disabilita la modifica del Text
+        frase_text.config(state=tk.NORMAL)
+        frase_text.delete('1.0', tk.END)
+        frase_text.insert('1.0', 'Non ho capito cosa intendevi')
+        frase_text.config(state=tk.DISABLED)
 
-# Creazione della finestra principale
-def gui_main():
+def confirm_action(entry, frase_text):
+    text = entry.get()
+    frase_text.pack(pady=10, padx=10)
+    rispondi(text, frase_text)
+
+def create_gui(root, weather):
+    root.title("Come ti senti oggi?")
+    root.geometry("800x400")
+    root.configure(bg="#03ecfc")
     
+    benvenuto_label = tk.Label(root, text=weather, font=("Helvetica", 16), bg="#03ecfc")
+    benvenuto_label.pack(pady=10)
+    
+    domanda_label = tk.Label(root, text="Come ti senti oggi?", font=("Helvetica", 14), bg="#03ecfc")
+    domanda_label.pack(pady=10)
+    
+    entry = tk.Entry(root, font=("Helvetica", 12))
+    entry.pack(pady=5)
+    
+    frase_text = tk.Text(root, font=("Helvetica", 16), bg="#03ecfc", state=tk.DISABLED)
+    frase_text.pack_forget()  # Nasconde il Text all'inizio
+    
+    button = tk.Button(root, text="Conferma", font=("Helvetica", 12), command=lambda: confirm_action(entry, frase_text))
+    button.pack(pady=10)
+
+def start_app():
     if os.name == 'nt':
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
@@ -28,37 +51,5 @@ def gui_main():
     weather = meteo.define_meteo(weather_description)
     
     root = tk.Tk()
-    root.title("Come ti senti oggi?")
-    root.geometry("800x400")
-    root.configure(bg="#03ecfc")
-    
-
-    # Etichetta di benvenuto
-    benvenuto_label = tk.Label(root, text=weather, font=("Helvetica", 16), bg="#03ecfc")
-    benvenuto_label.pack(pady=10)
-
-    # Etichetta per la domanda
-    domanda_label = tk.Label(root, text="Come ti senti oggi?", font=("Helvetica", 14), bg="#03ecfc")
-    domanda_label.pack(pady=10)
-
-    # Campo di inserimento
-    entry = tk.Entry(root, font=("Helvetica", 12))
-    entry.pack(pady=5)
-
-    def intermedio():
-        text = entry.get()
-        frase_text.pack(pady=10)
-        frase_text.pack(padx=10)
-        rispondi(text, frase_text)
-    # Pulsante di conferma
-    frase_text = tk.Text(root, font=("Helvetica", 16), bg="#03ecfc", state=tk.DISABLED)
-    frase_text.pack_forget()  # Nasconde il Text all'inizio
-    button = tk.Button(root, text="Conferma", font=("Helvetica", 12), command=intermedio)
-    button.pack(pady=10)
-    
-    # benvenuto_label = tk.Label(root, text=, font=("Helvetica", 16), bg="#03ecfc")
-
-    # Esecuzione del loop principale
+    create_gui(root, weather)
     root.mainloop()
-
-

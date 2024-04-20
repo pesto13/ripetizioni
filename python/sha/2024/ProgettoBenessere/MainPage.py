@@ -1,8 +1,10 @@
+import locale
 import tkinter as tk
-import meteo
 import asyncio
 import os
 import frasi
+import datetime
+import calendar
 
 def rispondi(text, frase_text):
     risposta = text
@@ -23,12 +25,12 @@ def confirm_action(entry, frase_text):
     frase_text.pack(pady=10, padx=10)
     rispondi(text, frase_text)
 
-def create_gui(root, weather):
+def create_gui(root, date):
     root.title("Come ti senti oggi?")
-    root.geometry("800x400")
+    root.geometry("500x700")
     root.configure(bg="#03ecfc")
     
-    benvenuto_label = tk.Label(root, text=weather, font=("Helvetica", 16), bg="#03ecfc")
+    benvenuto_label = tk.Label(root, text=date, font=("Helvetica", 16), bg="#03ecfc")
     benvenuto_label.pack(pady=10)
     
     domanda_label = tk.Label(root, text="Come ti senti oggi?", font=("Helvetica", 14), bg="#03ecfc")
@@ -44,12 +46,13 @@ def create_gui(root, weather):
     button.pack(pady=10)
 
 def start_app():
-    if os.name == 'nt':
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-
-    weather_description = asyncio.run(meteo.getweather())
-    weather = meteo.define_meteo(weather_description)
-    
+    # Imposta la localizzazione italiana
+    locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
+    oggi = datetime.date.today()
+    numero_mese = oggi.month
+    # Converte il numero del mese nel nome del mese
+    nome_mese = calendar.month_name[numero_mese]
     root = tk.Tk()
-    create_gui(root, weather)
+    
+    create_gui(root, 'Oggi è il ' + oggi.strftime('%d') + ' ' + nome_mese)
     root.mainloop()

@@ -1,4 +1,7 @@
-import GUI
+import MainPage
+import Welcome
 
 if __name__ == '__main__':
-    GUI.start_app()
+    # MainPage.start_app()
+    # welcome
+    Welcome.start_app()

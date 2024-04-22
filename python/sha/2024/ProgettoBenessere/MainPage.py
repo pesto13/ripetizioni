@@ -1,7 +1,5 @@
 import locale
 import tkinter as tk
-import asyncio
-import os
 import frasi
 import datetime
 import calendar

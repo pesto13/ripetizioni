@@ -17,7 +17,7 @@ def handle_login(username_entry, password_entry, root):
     
     if check_login(username, password):
         root.destroy()
-        MainPage.start_app()
+        MainPage.start_app(username)
     else:
         mex.showerror('Errore', 'Credenziali non valide')
 
@@ -37,7 +37,7 @@ def handle_register(username_entry, password_entry, root):
         f.write(username + ' ' + password + '\n')
     
     root.destroy()
-    MainPage.start_app()
+    MainPage.start_app(username)
     
 
 def create_gui(root):

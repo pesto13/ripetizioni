@@ -1,4 +1,3 @@
-package 2024.carteMostro;
 
 enum tipoCarta{
     Umano,

@@ -11,17 +11,17 @@ def check_login(username, password):
     
     return False
 
-def handle_login(username_entry, password_entry, root):
+def handle_login():
     username = username_entry.get()
     password = password_entry.get()
     
     if check_login(username, password):
-        root.destroy()
+        finestra.destroy()
         MainPage.start_app(username)
     else:
         mex.showerror('Errore', 'Credenziali non valide')
 
-def handle_register(username_entry, password_entry, root):
+def handle_register():
     username = username_entry.get()
     password = password_entry.get()
     
@@ -36,32 +36,26 @@ def handle_register(username_entry, password_entry, root):
     with open('db.txt', 'a') as f:
         f.write(username + ' ' + password + '\n')
     
-    root.destroy()
+    finestra.destroy()
     MainPage.start_app(username)
-    
 
-def create_gui(root):
-    root.title("Login")
-    root.geometry("500x700")
-    root.configure(bg="#03ecfc")
-    
-    benvenuto_label = tk.Label(root, text='Benvenuto nell\'applicazione', font=("Helvetica", 16), bg="#03ecfc")
-    benvenuto_label.pack(pady=10)
-    
-    username_entry = tk.Entry(root, font=("Helvetica", 12))
-    username_entry.pack(pady=5)
-    
-    password_entry = tk.Entry(root, font=("Helvetica", 12))
-    password_entry.pack(pady=5)
-    
-    button = tk.Button(root, text="Login", font=("Helvetica", 12), command=lambda: handle_login(username_entry, password_entry, root))
-    button.pack(pady=10)
-    
-    button = tk.Button(root, text="Registrati", font=("Helvetica", 12), command=lambda: handle_register(username_entry, password_entry, root))
-    button.pack(pady=10)
-    
+finestra = tk.Tk()
+finestra.title("Login")
+finestra.geometry("500x700")
+finestra.configure(bg="#03ecfc")
 
-def start_app():
-    root = tk.Tk()
-    create_gui(root)
-    root.mainloop()
+benvenuto_label = tk.Label(finestra, text='Benvenuto nell\'applicazione', font=("Helvetica", 16), bg="#03ecfc")
+benvenuto_label.pack(pady=10)
+
+username_entry = tk.Entry(finestra, font=("Helvetica", 12))
+username_entry.pack(pady=5)
+
+password_entry = tk.Entry(finestra, font=("Helvetica", 12))
+password_entry.pack(pady=5)
+
+button = tk.Button(finestra, text="Login", font=("Helvetica", 12), command=handle_login)
+button.pack(pady=10)
+
+button = tk.Button(finestra, text="Registrati", font=("Helvetica", 12), command=handle_register)
+button.pack(pady=10)
+finestra.mainloop()

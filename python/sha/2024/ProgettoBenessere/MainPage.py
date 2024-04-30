@@ -1,5 +1,4 @@
 import tkinter as tk
-import frasi
 import random
 
 disegni = [
@@ -78,8 +77,7 @@ def rispondi(felicita_lvl, frase_text):
     else:
         risposta = 'Bene'
     
-    
-    frase = frasi.restituisci_frase(risposta)
+    frase = restituisci_frase(risposta)
     label_chiaro['text'] = frase
     
     frase = list(frase)

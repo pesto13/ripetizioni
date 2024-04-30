@@ -118,7 +118,7 @@ f.close()
 
 finestra = tk.Tk()
 finestra.title("Come ti senti oggi?")
-finestra.geometry("500x900")
+finestra.geometry("700x900")
 finestra.configure(bg="#03ecfc")
 
 vite_label = tk.Label(finestra, text="Come ti senti oggi?", font=("Helvetica", 14), bg="#03ecfc")

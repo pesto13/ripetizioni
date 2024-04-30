@@ -47,7 +47,7 @@ def handle_register():
 
 finestra = tk.Tk()
 finestra.title("Login")
-finestra.geometry("500x700")
+finestra.geometry("500x300")
 finestra.configure(bg="#03ecfc")
 
 benvenuto_label = tk.Label(finestra, text='Benvenuto nell\'applicazione', font=("Helvetica", 16), bg="#03ecfc")

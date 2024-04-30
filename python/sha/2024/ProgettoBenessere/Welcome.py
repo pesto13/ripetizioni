@@ -1,13 +1,13 @@
 import tkinter as tk
 import tkinter.messagebox as mex
-import MainPage
 
 def check_login(username, password):
-    with open('db.txt', 'r') as f:
-        for line in f:
-            file_username, file_password = line.strip().split(' ')
-            if username == file_username and password == file_password:
-                return True
+    f = open('db.txt', 'r')
+    for line in f:
+        file_username, file_password = line.strip().split(' ')
+        if username == file_username and password == file_password:
+            return True
+    f.close()
     
     return False
 
@@ -16,8 +16,11 @@ def handle_login():
     password = password_entry.get()
     
     if check_login(username, password):
+        f = open('logged.txt', 'w')
+        f.write(username)
+        f.close()
         finestra.destroy()
-        MainPage.start_app(username)
+        import MainPage
     else:
         mex.showerror('Errore', 'Credenziali non valide')
 
@@ -32,12 +35,15 @@ def handle_register():
     if ' ' in username or ' ' in password:
         mex.showerror('Errore', 'Nome utente o password Non corretti')
         return
+    f =  open('db.txt', 'a')
+    f.write(username + ' ' + password + '\n')
+    f.close()
     
-    with open('db.txt', 'a') as f:
-        f.write(username + ' ' + password + '\n')
-    
+    f = open('logged.txt', 'w')
+    f.write(username)
+    f.close()
     finestra.destroy()
-    MainPage.start_app(username)
+    import MainPage
 
 finestra = tk.Tk()
 finestra.title("Login")
